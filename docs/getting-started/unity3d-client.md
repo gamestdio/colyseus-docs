@@ -17,6 +17,9 @@ The demo server is using [`@colyseus/social`](/tools/colyseus-social/) for user 
 
 !!! Tip
     Ensure you have [Node v8+](http://nodejs.org/) installed locally to run the server.
+    
+!!! Tip
+    As an alternative to running MongoDB locally, [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) also works fine. After registering for the free tier, log in and click the button to "Connect" to your cluster. In the wizard select "Connect your application" and go for the username + password version. Finally copy the connection string and in the first line the index.ts file of the example server, set the connection string environmental parameter which is picked up by the colyseus/social - ```process.env.MONGO_URI = 'mongodb+srv://<username>:<password>@cluster0-aaaa.mongodb.net/test?retryWrites=true&w=majority'```. This should take ~5 minutes, if it does not work: 1) have you whitelisted your IP adress and 2) Did you click 'generate user' in the 'Connect' wizard?
 
 ## Usage
 
