@@ -13,10 +13,10 @@ Colyseus currently has client-side SDK's available for the following platforms:
 The `Client` instance is used to perform matchmaking calls, and later connect to one or many rooms. 
 
 ```typescript fct_label="JavaScript"
-import Colyseus from "colyseus.js";
+import { Client } from "colyseus.js";
 // ...
 
-let client = new Colyseus.Client("ws://localhost:2567");
+let client = new Client("ws://localhost:2567");
 ```
 
 ```csharp fct_label="C#"
