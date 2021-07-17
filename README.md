@@ -15,3 +15,8 @@ pip install -r requirements.txt
 ```
 mkdocs serve
 ```
+## Docker
+
+```
+docker run --rm -it -p 8000:8000 -v ${PWD}:/docs lucidsightinc/mkdocs-material
+```

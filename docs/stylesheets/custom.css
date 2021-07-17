@@ -1,0 +1,99 @@
+/*
+ * custom header background
+ */
+.md-header, .md-tabs {
+  background: rgb(67,134,255);
+  background: linear-gradient(90deg, rgba(67,134,255,1) 0%, rgba(154,86,255,1) 100%);
+}
+
+/*
+ * syntax highligh + dark theme
+ */
+.hljs {
+    color: #c9d1d9 !important;
+    background: #0d1117 !important;
+}
+.code-tabpanel .hljs {
+    /* round bottom corners when code is inside tabs 💅 */
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0.5em !important;
+    border-bottom-right-radius: 0.5em !important;
+}
+
+/*
+ * general customizations
+ */
+
+/* first page title on navigation bar */
+div.md-sidebar.md-sidebar--primary > div > div > nav > ul > li.md-nav__item.md-nav__item--active.md-nav__item--nested > nav > label {
+    color: #999 !important;
+    font-weight: normal !important;
+    font-size: 1.1em !important;
+}
+
+article.md-content__inner img {
+  border-radius: 0.5em;
+}
+
+/*
+ * code tabs
+ */
+.md-fenced-code-tabs * {
+  box-sizing: border-box;
+}
+
+.md-fenced-code-tabs {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  width: 100%;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.md-fenced-code-tabs input {
+  position: absolute;
+  opacity: 0;
+}
+
+.md-fenced-code-tabs label {
+  font-size: 14px;
+  width: auto;
+  padding: 4px;
+  cursor: pointer;
+  color: #aaa;
+
+  position: relative;
+  display: inline-block;
+  /* border-top: 2px solid #ebebeb; */
+  border-bottom: 2px solid #ebebeb;
+  max-width: 200px;
+  margin: 0 4px 0 0;
+  overflow: hidden;
+  padding: 12px 24px;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.md-fenced-code-tabs input:checked + label {
+  color: #039be5;
+  border-bottom-color: #039be5;
+}
+
+.md-fenced-code-tabs .code-tabpanel {
+  display: none;
+  width: 100%;
+  order: 99;
+}
+
+.md-fenced-code-tabs input:checked + label + .code-tabpanel {
+  display: block;
+}
+
+.md-fenced-code-tabs pre,
+.md-fenced-code-tabs .codehilite {
+  width: 100%;
+  margin: 0px;
+}

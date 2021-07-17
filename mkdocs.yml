@@ -1,7 +1,7 @@
 # Project information
-site_name: 'Colyseus 0.14'
+site_name: 'Colyseus & Arena Cloud Documentation'
 site_description: 'Documentation for Colyseus Multiplayer Framework for Node.js'
-site_author: 'Endel Dreyer'
+site_author: 'Endel Dreyer & Fazri Zubair'
 site_url: 'https://colyseus.io/'
 edit_uri: 'https://github.com/colyseus/docs/edit/master/docs/'
 
@@ -30,33 +30,125 @@ theme:
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - navigation.tabs
+
+plugins:
+  - search:
+      lang:
+        - en
+        - de
+        - pt
+
+  - i18n:
+      default_language: 'en'
+
+      languages:
+        en: "English"
+        zh: "简体中文" #Simplified Chinese
+        pt: "Português" # Portuguese
+        de: "Deutsch" # German
+        hi: "हिंदी" # Hindi
+        fr: "Français" # French
+
+      nav_translations:
+        en:
+          getting started: 'Getting started'
+          Client-side SDK: "Client-side SDK"
+          Installation: "Installation"
+          Unity: "Unity"
+          Deployment: "Deployment"
+          Production Deployments: "Production Deployments"
+          Managing Deployments: "Managing Deployments"
+          Reference: "Reference"
+        zh:
+          getting started: "TBD"
+          Client-side SDK: "TBD"
+          Installation: "TBD"
+          Unity: "TBD"
+          Deployment: "TBD"
+          Production Deployments: "TBD"
+          Managing Deployments: "TBD"
+          Reference: "TBD"
+        pt:
+          getting started: "Introdução"
+          Client-side SDK: "Client-side SDK"
+          Installation: "Instalação"
+          Unity: "TBD"
+          Deployment: "TBD"
+          Production Deployments: "TBD"
+          Managing Deployments: "TBD"
+          Reference: "TBD"
+        de:
+          getting started: 'Einstieg'
+          Client-side SDK: "Clientseitiges SDK"
+          Installation: "Installation"
+          Unity: "TBD"
+          Deployment: "Einsatz"
+          Production Deployments: "TBD"
+          Managing Deployments: "TBD"
+          Reference: "TBD"
+        hi:
+          getting started: "TBD"
+          Client-side SDK: "TBD"
+          Installation: "TBD"
+          Unity: "TBD"
+          Deployment: "TBD"
+          Production Deployments: "TBD"
+          Managing Deployments: "TBD"
+          Reference: "TBD"
+        fr:
+          getting started: "TBD"
+          Client-side SDK: "TBD"
+          Installation: "TBD"
+          Unity: "TBD"
+          Deployment: "TBD"
+          Production Deployments: "TBD"
+          Managing Deployments: "TBD"
+          Reference: "TBD"
+
 
 extra_css:
-  - 'stylesheets/code-tabs.css'
-  - 'stylesheets/ads.css'
+  - 'stylesheets/custom.css'
+#   - 'stylesheets/ads.css'
+#   - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/github.min.css' # syntax highlight
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/github-dark.min.css' # syntax highlight
+
 
 extra_javascript:
-  - 'javascripts/main.js'
-  - 'https://docs.colyseus.io/javascripts/previous_versions.js'
   # - 'javascripts/ads.js'
+  - 'javascripts/main.js'
+#   - 'https://docs.colyseus.io/javascripts/previous_versions.js'
+  # syntax highlight
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/javascript.min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/typescript.min.js'
+  - 'javascripts/config.js'
 
 # Options
 extra:
-  search:
-    language: 'en'
+#   search:
+#     language: 'en'
   social:
-  - type: 'comments'
-    link: 'https://discuss.colyseus.io'
-  - type: 'globe'
+  - icon: 'fontawesome/solid/globe'
     link: 'http://colyseus.io'
-  - type: 'github'
+  - icon: 'fontawesome/solid/comment-alt'
+    link: 'https://discuss.colyseus.io'
+  - icon: 'fontawesome/brands/github'
     link: 'https://github.com/colyseus'
-  - type: 'twitter'
+  - icon: 'fontawesome/brands/twitter'
     link: 'https://twitter.com/colyseus'
+  - icon: 'fontawesome/brands/discord'
+    link: 'https://discord.gg/RY8rRS7'
 
 # Extensions
 markdown_extensions:
   - admonition
+  - pymdownx.highlight:
+      use_pygments: false
   - codehilite:
       linenums: False
       guess_lang: False
@@ -69,67 +161,91 @@ markdown_extensions:
 
 # Nav menu
 nav:
-- 'Getting started': 'index.md'
-- 'Client-side SDK':
-  - 'Installation':
-    - 'Unity': 'getting-started/unity3d-client.md'
-    - 'JavaScript': 'getting-started/javascript-client.md'
-    - 'Defold Engine': 'getting-started/defold-client.md'
-    - 'Haxe': 'getting-started/haxe-client.md'
-    - 'Cocos Creator': 'getting-started/cocos-creator.md'
-    # - 'Cocos2d-x': 'getting-started/cocos2dx-client.md'
-    - 'Construct3': 'getting-started/construct3-client.md'
-  - 'Usage': 'client/client.md'
+- 'Colyseus | Framework':
+  - getting started:
+    - 'colyseus/index.md'
+  - Client-side SDK:
+    - Installation:
+      - 'Unity': 'colyseus/getting-started/unity3d-client.md'
+      - 'JavaScript': 'colyseus/getting-started/javascript-client.md'
+      - 'Defold Engine': 'colyseus/getting-started/defold-client.md'
+      - 'Haxe': 'colyseus/getting-started/haxe-client.md'
+      - 'Cocos Creator': 'colyseus/getting-started/cocos-creator.md'
+      # - 'Cocos2d-x': 'getting-started/cocos2dx-client.md'
+      - 'Construct3': 'colyseus/getting-started/construct3-client.md'
+    - 'Usage': 'colyseus/client/client.md'
 
-- 'Server API':
-  - 'Server': 'server/api.md'
-  - 'Room': 'server/room.md'
-  - 'Timing events': 'server/timing-events.md'
-  - 'Match-maker API': 'server/matchmaker.md'
-  - 'Presence': 'server/presence.md'
-  - 'Transport': 'server/transport.md'
-  - 'Graceful shutdown': 'server/graceful-shutdown.md'
-  # - 'Custom State Serialization': 'server/state-serialization.md'
+  - 'Server API':
+    - 'Server': 'colyseus/server/api.md'
+    - 'Room': 'colyseus/server/room.md'
+    - 'Timing events': 'colyseus/server/timing-events.md'
+    - 'Match-maker API': 'colyseus/server/matchmaker.md'
+    - 'Presence': 'colyseus/server/presence.md'
+    - 'Transport': 'colyseus/server/transport.md'
+    - 'Graceful shutdown': 'colyseus/server/graceful-shutdown.md'
+    # - 'Custom State Serialization': 'server/state-serialization.md'
 
-- 'State Synchronization':
-  - 'Overview': 'state/overview.md'
-  - 'Schema': 'state/schema.md'
+  - 'State Synchronization':
+    - 'Overview': 'colyseus/state/overview.md'
+    - 'Schema': 'colyseus/state/schema.md'
 
-- 'Best practices': 'best-practices/overview.md'
+  - 'Best practices': 'colyseus/best-practices/overview.md'
 
-- 'Built-in Rooms':
-  - 'Lobby room': 'builtin-rooms/lobby.md'
-  - 'Relay room': 'builtin-rooms/relay.md'
+  - 'Built-in Rooms':
+    - 'Lobby room': 'colyseus/builtin-rooms/lobby.md'
+    - 'Relay room': 'colyseus/builtin-rooms/relay.md'
 
-- "Tools":
-  - "Monitoring Panel": 'tools/monitor.md'
-  - "Load Testing": 'tools/loadtest.md'
-  - "Authentication + Social": 'tools/colyseus-social.md'
+  - "Tools":
+    - "Monitoring Panel": 'colyseus/tools/monitor.md'
+    - "Load Testing": 'colyseus/tools/loadtest.md'
+    - "Authentication + Social": 'colyseus/tools/colyseus-social.md'
 
-- 'Debugging': 'debugging.md'
-- 'Deployment': 'deployment.md'
-- 'Scalability': 'scalability.md'
+  - 'Debugging': 'colyseus/debugging.md'
+  - 'Deployment': 'colyseus/deployment.md'
+  - 'Scalability': 'colyseus/scalability.md'
 
-- "How-to":
-  - 'Customize room id': 'how-to/custom-room-id.md'
-  - 'Password-protect a room': 'how-to/password-protect-room.md'
-  - 'Deny a player joining a room': 'how-to/deny-player-join-a-room.md'
-  - 'Rate-limit': 'how-to/rate-limit.md'
-  - 'Setup server from scratch (TS)': 'how-to/setup-server-from-scratch-typescript.md'
+  - "How-to":
+    - 'Customize room id': 'colyseus/how-to/custom-room-id.md'
+    - 'Password-protect a room': 'colyseus/how-to/password-protect-room.md'
+    - 'Deny a player joining a room': 'colyseus/how-to/deny-player-join-a-room.md'
+    - 'Rate-limit': 'colyseus/how-to/rate-limit.md'
+    - 'Setup server from scratch (TS)': 'colyseus/how-to/setup-server-from-scratch-typescript.md'
 
-- 'Migrating':
-  - '0.14.18': 'migrating/0.14.18.md'
-  - '0.14': 'migrating/0.14.md'
-  - '0.13': 'migrating/0.13.md'
-  - '0.12': 'migrating/0.12.md'
-  - '0.11': 'migrating/0.11.md'
-  - '0.10': 'migrating/0.10.md'
-  - '0.9': 'migrating/0.9.md'
+  - 'Migrating':
+    - '0.14.18': 'colyseus/migrating/0.14.18.md'
+    - '0.14': 'colyseus/migrating/0.14.md'
+    - '0.13': 'colyseus/migrating/0.13.md'
+    - '0.12': 'colyseus/migrating/0.12.md'
+    - '0.11': 'colyseus/migrating/0.11.md'
+    - '0.10': 'colyseus/migrating/0.10.md'
+    - '0.9': 'colyseus/migrating/0.9.md'
 
-- "Tech Demos":
-  - 'Shooting Gallery': 'demo/shooting-gallery/index.md'
-  - 'StarBoss': 'demo/starboss/index.md'
-  - 'Tanks': 'demo/turn-based-tanks/index.md'
-  - 'MMO': 'demo/mmo/index.md'
+  - "Tech Demos":
+    - 'Shooting Gallery': 'colyseus/demo/shooting-gallery/index.md'
+    - 'StarBoss': 'colyseus/demo/starboss/index.md'
+    - 'Tanks': 'colyseus/demo/turn-based-tanks/index.md'
+    - 'MMO': 'colyseus/demo/mmo/index.md'
 
-- 'FAQ': 'faq.md'
+  - 'FAQ': 'colyseus/faq.md'
+
+- 'Arena | Cloud Hosting':
+  - 'arena/index.md'
+  - getting started:
+    - Colyseus for Arena Cloud: 
+      - 'arena/getting-started/create-colyseus-server.md'
+      - 'arena/getting-started/modify-colyseus-server.md'
+    - 'arena/getting-started/create-application.md'
+    - 'arena/getting-started/managing-application.md'
+    - Uploading Server Code:
+      - 'arena/getting-started/upload-application.md'
+      - 'arena/getting-started/upload-application-via-gitsync.md'
+    - 'arena/getting-started/deploy-application.md'
+    - Managing Deployments:
+      - 'arena/getting-started/managing-deployments.md'
+      - 'arena/getting-started/deployment-logs.md'
+  - Reference:
+    - 'arena/reference/npmrc-custom.md'
+    - 'arena/reference/root-folder.md'
+  - Production Deployments:
+    - 'arena/production/deploy-prod-application.md'
+

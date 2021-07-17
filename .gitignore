@@ -2,3 +2,4 @@ site
 src
 .DS_Store
 .vscode
+*.log
